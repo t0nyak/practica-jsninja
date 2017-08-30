@@ -1,0 +1,34 @@
+ <div class="container" id="comments-container">
+    <div class="comments loading" data-id="1">
+        <div class="ui-status error"></div>
+        <div class="ui-status loading">
+            Cargando...
+        </div>
+        <div class="ui-status empty">
+            No hay ningún comentario hasta el momento.
+        </div>
+        <div class="ui-status ideal"></div>
+    </div>
+    <div class="comment-form">
+        <form id="comment-form" class="ideal" action="" novalidate>
+            <div class="ui-status error">
+            </div>
+            <div class="ui-status loading">
+                Cargando...
+            </div>
+            <div class="ui-status empty">
+                No hay ningún comentario
+            </div>
+            <div class="ui-status ideal">
+                <label for="nombre">Nombre y apellidos: </label>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre completo" required minlength="4">
+                <label for="email">E-mail: </label>
+                <input id="email" name="email" type="email" placeholder="Tu e-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <label for="comment">Comentario: </label>
+                <textarea name="comment" id="comment" placeholder="Tu comentario" required cols="30" rows="10"></textarea>
+                <input type="hidden" id="id-article" value="1">
+                <input type="submit" class="button" value="Enviar comentario">
+            </div>
+        </form>
+    </div>
+</div>

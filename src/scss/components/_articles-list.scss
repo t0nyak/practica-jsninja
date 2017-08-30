@@ -1,0 +1,141 @@
+.articles-list {
+    margin: 100px 0;
+    height: auto;
+    overflow: hidden;
+    .ui-status { display: none; }
+    &.empty {
+        .ui-status.empty { display: block; }
+    }
+    &.error {
+        .ui-status.error { display: block; }
+    }
+    &.loading {
+        .ui-status.loading { display: block; }
+    }
+    &.ideal {
+        .ui-status.ideal { display: block; }
+    }
+    &.empty, &.error, &.loading {
+        font-size: $font-size-large;
+        text-align: center;
+        padding: 50px;
+    }
+    .article {
+        position: relative;
+        box-sizing: border-box;
+        border: 1px solid $color-silver;
+        width: calc(100% - 10px);
+        float: left;
+        background: $color-box;
+        padding: 15px;
+        margin: 10px 5px;
+        height: 490px;
+        max-height: 490px;
+        overflow: hidden;
+        @include if-mobile-landscape {
+            width: calc(100%/2 - 10px);
+        }
+        @include if-desktop {
+            width: calc(100%/3 - 10px);
+        }
+        .cover {
+            width: 100%;
+            background-size: cover;
+            position: absolute;
+            height: 200px;
+            top: 0;
+            left: 0;
+            float: left;
+            overflow: hidden;
+            img, iframe {
+                width: 100%;
+                min-height: 200px;
+                position: absolute;
+            }          
+        }
+        .artist {
+            font-size: $font-size-small + 2px;
+            text-align: center;
+            height: 60px;
+            margin-top: 210px;
+            position: relative;
+            .avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-image: url('imgs/avatar-100px.jpg');
+                background-size: cover;
+                border: 3px solid $color-background;
+                position: absolute;
+                left: calc(50% - 25px);
+                top: -50px;
+                box-shadow:  0 0 5px $color-font;
+                transition: 1s;
+                &:hover {
+                    box-shadow:  0 0 10px $color-font;
+                    width: 55px;
+                    height: 55px;
+                    left: calc(50% - 28px);
+                    top: -53px;
+                }
+                &.no-avatar {
+                    background-image: url('http://shannoncallaghan.com/wp-content/uploads/2016/09/staff-placeholder-female.jpg');
+                }
+            }
+            p{
+                top: 16px;;
+                position: relative;
+            }
+        }
+        .title {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .subtitle {
+            margin-top: 10px;
+            font-style: italic;
+            color: fade-out($color-warn,0.25);
+        }
+        .buttons {
+            font-size: $font-size-large * 1.2;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            margin-top: 10px;
+            i {
+                display: inline;
+                max-width: 40px;
+                position: relative;
+                span {
+                    font-size: $font-size-base - 2px;
+                    font-weight: bold;
+                    position: relative;
+                    color: $color-warn;
+                    &.like, &.comment, &.download, &.share {
+                        bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .pagination {
+        width: 100%;
+        clear: both;
+        padding: 20px 5px;
+        box-sizing: border-box;
+        font-size: $font-size-large;
+        .prev, .next {
+            width: 30%;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid $color-silver;
+        }
+        .prev {
+            float: left;
+        }
+        .next {
+            float: right;
+        }
+    }
+}

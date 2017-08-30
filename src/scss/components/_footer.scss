@@ -1,0 +1,32 @@
+.web-footer {
+    z-index: 100;
+    box-sizing: border-box;
+    background: fade-out($color-silver, 0.15);
+    border-bottom: 1px solid $color-silver;
+    height: auto;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    transition: background 0.2s;
+    &:hover {
+        background: $color-silver;
+    }
+    .web-footer-text {
+        padding: 15px;
+        color: fade-out($main-text-color, 0.25);
+        font-size: $font-size-small;
+    }
+    i {
+        bottom: 50px;
+        right: 20px;
+        font-size: $font-size-large * 1.5;
+        position: absolute;
+        @include if-tablet {
+            right: 50px;
+        }
+        @include if-desktop {
+            right: 100px;
+        }
+    }
+}

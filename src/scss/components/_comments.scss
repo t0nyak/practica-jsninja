@@ -1,0 +1,94 @@
+#comment-form {
+    margin: 100px auto;
+    @include if-desktop {
+        width: 800px;
+    }
+    * {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+    .ui-status { display: none; }
+    &.empty {
+        .ui-status.empty { display: block; }
+    }
+    &.error {
+        .ui-status.error { display: block; }
+    }
+    &.loading {
+        .ui-status.loading { display: block; }
+    }
+    &.ideal {
+        .ui-status.ideal { display: block; }
+    }
+    &.empty, &.error, &.loading {
+        font-size: $font-size-large;
+        text-align: center;
+    }
+    input, textarea {
+        position: relative;
+        box-sizing: border-box;
+        padding: 8px;
+        margin: 10px;
+        border: 1px solid fade-out($color-font, 0.5);
+        color: $color-font;
+        font-size: $font-size-large;
+        font-family: inherit;
+        &:focus {
+            outline: 0;
+        }
+    }
+    label {
+        margin: 15px;
+        width: 100%;
+    }
+    input[type=submit] {
+        background-color: $color-warn;
+        color: $color-font;
+        border: 0;
+        font-weight: bold;
+        font-family: inherit;
+    }
+}
+.comments {
+    @include if-desktop {
+        width: 800px;
+    }
+    margin: 0 auto 50px auto;
+    width: 100%;
+    .ui-status { display: none; }
+    &.empty {
+        .ui-status.empty { display: block; }
+    }
+    &.error {
+        .ui-status.error { display: block; }
+    }
+    &.loading {
+        .ui-status.loading { display: block; }
+    }
+    &.ideal {
+        .ui-status.ideal { display: block; }
+    }
+    &.empty, &.error, &.loading {
+        font-size: $font-size-large;
+        text-align: center;
+    }
+    .comment {
+        width: 92%;
+        box-sizing: border-box;
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0px 0px 2px 1px $color-font;
+        .author {
+            font-weight: bold;
+        }
+        .e-mail {
+            font-style: italic;
+            color: fade-out($color-font, 0.4);
+        }
+        .time {
+            font-size: $font-size-base - 2;
+            margin: 5px 0 12px 0;
+            display: block;
+        }
+    }
+}

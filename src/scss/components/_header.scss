@@ -1,0 +1,75 @@
+.header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    .web-header {
+        position: relative;        
+        box-sizing: border-box;
+        background: fade-out($color-background, 0.15);
+        border-bottom: 1px solid $color-silver;
+        color: $main-text-color;
+        top: 0px;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        transition: background 0.2s;
+        .ui-status {
+            display: block;
+        }
+        &:hover {
+            background: $color-background;
+        }
+        .web-title {
+            font-weight: bold;
+            padding: 19px;
+            font-size: $font-size-large;
+            a {
+                text-decoration: none;
+            }
+        }
+        * {
+            display: inline-block;
+        }
+        .menu, .search, .login {
+            float: right;
+            padding: 20px;
+        }
+        .input-search {
+            width: 80%;
+            input {
+                border-radius: 15px;
+                height: 20px;
+                margin: 10px 15px;
+                padding: 8px;
+                font-size: $font-size-base;
+                color: $color-font;
+                width: 98%;
+                border: 1px solid #d3d3d3;
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+    .categories {
+        position: relative;
+        background: fade-out($color-background, 0.15);
+        border-bottom: 1px solid $color-silver;
+        z-index: 100;
+        max-height: 39px;
+        width: auto;
+        max-width: 100%;
+        overflow: hidden;
+        .categories-list {
+            box-sizing: border-box;
+            white-space: nowrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            .category-item {
+                display: inline-block;
+                padding: 10px;
+            }
+        }
+    }
+}
